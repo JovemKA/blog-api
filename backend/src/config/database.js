@@ -1,22 +1,29 @@
-const { Pool } = require("pg");
-require("dotenv").config();
+// Importa o módulo 'pg' para conexão com o PostgreSQL
+const { Pool } = require('pg');
 
+// Carrega as variáveis de ambiente do arquivo .env
+require('dotenv').config();
+
+// Cria um novo pool de conexões com as configurações fornecidas
 const pool = new Pool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT,
+  host: process.env.DB_HOST,      // Endereço do host do banco de dados
+  user: process.env.DB_USER,      // Nome de usuário para autenticação
+  password: process.env.DB_PASSWORD, // Senha do usuário
+  database: process.env.DB_NAME,  // Nome do banco de dados
+  port: process.env.DB_PORT,      // Porta do banco de dados
   ssl: {
-    rejectUnauthorized: false,
+    rejectUnauthorized: false,    // Necessário para conexões SSL com Supabase
   },
 });
 
-pool.connect((err) => {
+// Verifica a conexão com o banco de dados
+pool.connect((err, client, release) => {
   if (err) {
-    console.error("Erro ao conectar ao Supabase:", err);
-  } else {
-    console.log("Conexão ao Supabase estabelecida com sucesso!");
-    pool.end();
+    return console.error('Erro ao conectar ao banco de dados:', err.stack);
   }
+  console.log('Conexão com o banco de dados estabelecida com sucesso.');
+  release();
 });
+
+// Exporta o pool de conexões para ser usado em outras partes do aplicativo
+module.exports = pool;
