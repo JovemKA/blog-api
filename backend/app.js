@@ -6,8 +6,8 @@ require('dotenv').config();
 app.use(express.json());
 
 // Importando as rotas
-// const postsRouter = require('./routes/posts');
-// app.use('/posts', postsRouter);
+const postsRouter = require('./routes/posts');
+app.use('/posts', postsRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

@@ -84,5 +84,3 @@ exports.deletePost = async (req, res) => {
         res.status(500).json({ error: 'Erro ao deletar post: ' + error.message });
     }
 };
-
-module.exports = { createPost, getPosts, getArticleById, updatePost, deletePost };
