@@ -1,19 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog CRUD</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="icon" href="https://glitch.com/favicon.ico" /> -->
+
+    <title>Andrey Kaiky - Blog</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="./script.js" defer></script>
   </head>
   <body>
-    <h1>Gerenciar Artigos</h1>
-    <form id="articleForm">
-      <input type="text" id="title" placeholder="Título" required />
-      <textarea id="content" placeholder="Conteúdo" required></textarea>
-      <button type="submit">Adicionar Artigo</button>
-    </form>
-    <div id="articles"></div>
-    <script src="script.js"></script>
+    <header>
+      <h1 class="logo">Meu Blog</h1>
+
+      <nav class="navbar">
+        <ul>
+          <li class="section">Blog</li>
+          <li class="section">Sobre</li>
+          <li class="section">Contato</li>
+        </ul>
+      </nav>
+
+      <input type="search" placeholder="Pesquisar" />
+    </header>
+    <main>
+      <h1>Blog de Andrey Kaiky</h1>
+      <div class="filter-buttons">
+          <button class="filter-button active">Todos</button>
+          <button class="filter-button">Games</button>
+          <button class="filter-button">Filmes</button>
+          <button class="filter-button">Músicas</button>
+      </div>
+      <section class="posts-grid">
+        <article class="post-card">
+          <span class="date"></span>
+          <h2>Titulo do Post</h2>
+          <p>Texto do post</p>
+          <a href="#">Leia mais</a>
+          <span class="tag"></span>
+        </article>
+        <article class="post-card">
+          <span class="date"></span>
+          <h2>Titulo do Post</h2>
+          <p>Texto do post</p>
+          <a href="#">Leia mais</a>
+          <span class="tag"></span>
+        </article>
+      </section>
+    </main>
   </body>
 </html>
