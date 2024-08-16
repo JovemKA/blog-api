@@ -55,27 +55,106 @@ main {
   margin-bottom: 20px;
 }
 
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-  gap: 60px;
-}
-
-.post-card {
-  width: 190px;
-  height: 254px;
+.filter-button {
+  background-color: #ffffff;
+  border: 1px solid #050307;
   border-radius: 20px;
-  background: #f5f5f5;
-  position: relative;
-  padding: 1.2rem;
-  border: 2px solid #c3c6ce;
-  transition: 0.5s ease-out;
-  overflow: visible;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* images and videos max out at full width */
-/* img,
-video {
-  height: auto;
-  max-width: 100%;
-} */
+.filter-button:hover {
+  background-color: #050307;
+  color: #ffffff;
+}
+
+.filter-button.active {
+  background-color: #050307;
+  color: #ffffff;
+}
+
+  /* .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 60px;
+  } */
+
+
+
+/* Estilização dos cards de post */
+.post-card {
+  flex: 1;
+  max-width: 45%;
+  min-width: 280px;
+  background-color: #f7edde;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.post-card .date {
+  font-size: 14px;
+  color: #050307;
+}
+
+.post-card h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #050307;
+  margin-bottom: 10px;
+}
+
+.post-card p {
+  font-size: 16px;
+  color: #050307;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.post-card a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #050307;
+  text-decoration: none;
+  align-self: flex-start;
+  border-bottom: 2px solid #050307;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.post-card a:hover {
+  color: #050307;
+  border-color: #050307;
+}
+
+.post-card .tag {
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #f7edde;
+  border: 1px solid #050307;
+  border-radius: 20px;
+  padding: 5px 10px;
+  align-self: flex-start;
+}
+
+/* Estilo do contêiner de cards */
+.posts-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espaçamento entre os cards */
+  justify-content: center; /* Centraliza os cards na tela */
+}
+
+
