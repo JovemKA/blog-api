@@ -41,7 +41,7 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #050307;
+  color: #182825;
 }
 
 main {
@@ -51,7 +51,7 @@ main {
 h1 {
   font-size: 36px;
   font-weight: 600;
-  color: #050307;
+  color: #182825;
   margin-bottom: 20px;
 }
 
@@ -64,7 +64,7 @@ h1 {
 
 .filter-button {
   background-color: #ffffff;
-  border: 1px solid #050307;
+  border: 1px solid #182825;
   border-radius: 20px;
   padding: 10px 20px;
   font-size: 14px;
@@ -74,12 +74,12 @@ h1 {
 }
 
 .filter-button:hover {
-  background-color: #050307;
+  background-color: #182825;
   color: #ffffff;
 }
 
 .filter-button.active {
-  background-color: #050307;
+  background-color: #182825;
   color: #ffffff;
 }
 
@@ -96,7 +96,7 @@ h1 {
   flex: 1;
   max-width: 45%;
   min-width: 280px;
-  background-color: #f7edde;
+  background-color: #D9DBF1;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -114,19 +114,19 @@ h1 {
 
 .post-card .date {
   font-size: 14px;
-  color: #050307;
+  color: #182825;
 }
 
 .post-card h2 {
   font-size: 20px;
   font-weight: 600;
-  color: #050307;
+  color: #182825;
   margin-bottom: 10px;
 }
 
 .post-card p {
   font-size: 16px;
-  color: #050307;
+  color: #182825;
   line-height: 1.4;
   margin-bottom: 20px;
 }
@@ -134,26 +134,38 @@ h1 {
 .post-card a {
   font-size: 14px;
   font-weight: 500;
-  color: #050307;
+  color: #182825;
   text-decoration: none;
   align-self: flex-start;
-  border-bottom: 2px solid #050307;
+  border-bottom: 2px solid #182825;
   transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .post-card a:hover {
-  color: #050307;
-  border-color: #050307;
+  color: #182825;
+  border-color: #182825;
 }
 
 .post-card .tag {
   font-size: 14px;
   font-weight: 500;
-  background-color: #f7edde;
-  border: 1px solid #050307;
+  background-color: #D9DBF1;
+  border: 1px solid #182825;
   border-radius: 20px;
   padding: 5px 10px;
   align-self: flex-start;
+}
+
+.post-card .tag:hover {
+  background-color: #182825;
+  color: #ffffff;
+}
+
+.post-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
 }
 
 /* Estilo do contêiner de cards */
