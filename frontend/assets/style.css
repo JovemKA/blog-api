@@ -41,11 +41,18 @@ nav ul {
 
 nav a {
   text-decoration: none;
-  color: #333333;
+  color: #050307;
 }
 
 main {
   padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: #050307;
+  margin-bottom: 20px;
 }
 
 .filter-buttons {
