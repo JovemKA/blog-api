@@ -1,15 +1,20 @@
 // Função para renderizar os posts na página principal
+// Função para renderizar os posts na página principal
 async function loadPosts() {
   try {
-      const response = await fetch('/api/posts');
-      const posts = await response.json();
+    const response = await fetch('/posts');
+    if (!response.ok) {
+      throw new Error('Erro na resposta da API: ' + response.statusText);
+    }
+    const posts = await response.json();
 
-      const postsContainer = document.getElementById('posts-container');
-      postsContainer.innerHTML = '';
+    const postsContainer = document.querySelector('.posts-grid'); // Ajustado para refletir o HTML
+    postsContainer.innerHTML = '';
 
-      posts.forEach(post => {
-          const postElement = document.createElement('div');
-          postElement.classList.add('post-card');
+    posts.forEach(post => {
+      const postElement = document.createElement('div');
+      postElement.classList.add('post-card');
+
           
           postElement.innerHTML = `
               <h2>${post.title}</h2>
@@ -19,34 +24,24 @@ async function loadPosts() {
           `;
 
           postsContainer.appendChild(postElement);
-      });
+    });
 
-      // Adiciona o evento de clique nos links "Leia Mais"
-      document.querySelectorAll('.read-more').forEach(link => {
-          link.addEventListener('click', async (event) => {
-              event.preventDefault();
-              const slug = event.target.getAttribute('data-slug');
-              window.location.href = `/post/${slug}`; // Redireciona para a página do post
-          });
+    // Adiciona o evento de clique nos links "Leia Mais"
+    document.querySelectorAll('.read-more').forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const slug = event.target.getAttribute('data-slug');
+        window.location.href = `/post/${slug}`; // Redireciona para a página do post
       });
+    });
 
   } catch (error) {
-      console.error('Erro ao carregar posts:', error);
+    console.error('Erro ao carregar posts:', error);
   }
 }
 
 // Carrega os posts quando a página principal é carregada
 window.addEventListener('DOMContentLoaded', loadPosts);
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -75,7 +70,5 @@ window.addEventListener('DOMContentLoaded', loadPosts);
 //   postCategoryField.innerHTML = postCategory;
 //   postContainer.innerHTML = postContent;
 // }
-
-
 
 // exibirPost();
