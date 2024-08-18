@@ -67,7 +67,7 @@ exports.getPostBySlug = async (req, res) => {
             .from('Posts')
             .select('*')
             .eq('slug', slug)
-            .limit(1); // Garante que no máximo um resultado seja retornado
+            .single();
 
         if (error) {
             console.error('Supabase error:', error); // Log do erro
@@ -78,7 +78,7 @@ exports.getPostBySlug = async (req, res) => {
             return res.status(404).json({ error: 'Post não encontrado' });
         }
 
-        res.status(200).json(data[0]);
+        res.status(200).json(data);
     } catch (error) {
         console.error('Catch block error:', error); // Log para erros no bloco catch
         res.status(500).json({ error: 'Erro ao encontrar post: ' + error.message });
