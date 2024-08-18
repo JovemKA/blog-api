@@ -33,9 +33,9 @@ async function loadPosts() {
       link.addEventListener('click', (event) => {
         event.preventDefault();
         const slug = event.target.getAttribute('data-slug');
-        window.location.href = `/post/${slug}`; // Redireciona para a página do post
+        window.location.href = `/public/post.html?slug=${slug}`; // Redireciona para a página do post
       });
-    });
+    });    
 
   } catch (error) {
     console.error('Erro ao carregar posts:', error);
@@ -44,7 +44,6 @@ async function loadPosts() {
 
 // Carrega os posts quando a página principal é carregada
 window.addEventListener('DOMContentLoaded', loadPosts);
-
 
 
 
