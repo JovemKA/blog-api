@@ -4,6 +4,9 @@ const path = require('path');
 const app = express();
 require('dotenv').config();
 
+const cors = require('cors');
+app.use(cors());
+
 // Middleware para JSON
 app.use(bodyParser.json());
 

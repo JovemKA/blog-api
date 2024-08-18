@@ -1,8 +1,7 @@
 // Função para renderizar os posts na página principal
-// Função para renderizar os posts na página principal
 async function loadPosts() {
   try {
-    const response = await fetch('/posts');
+    const response = await fetch('http://localhost:3000/posts');
     if (!response.ok) {
       throw new Error('Erro na resposta da API: ' + response.statusText);
     }
@@ -15,15 +14,18 @@ async function loadPosts() {
       const postElement = document.createElement('div');
       postElement.classList.add('post-card');
 
-          
-          postElement.innerHTML = `
-              <h2>${post.title}</h2>
-              <p class="date">${new Date(post.updated_at).toLocaleDateString()}</p>
+
+      postElement.innerHTML = `
+          <span class="date">${new Date(post.updated_at).toLocaleDateString()}</span>
+          <h2>${post.title}</h2>
               <p>${post.excerpt}</p>
+              <div class="post-card-footer">
               <a href="#" data-slug="${post.slug}" class="read-more">Leia Mais</a>
+              <button class="filter-button category">${post.category}</button>
+              </div>
           `;
 
-          postsContainer.appendChild(postElement);
+      postsContainer.appendChild(postElement);
     });
 
     // Adiciona o evento de clique nos links "Leia Mais"
