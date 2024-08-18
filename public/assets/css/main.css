@@ -83,14 +83,6 @@ h1 {
   color: #ffffff;
 }
 
-  /* .posts-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-    gap: 60px;
-  } */
-
-
-
 /* Estilização dos cards de post */
 .post-card {
   flex: 1;
@@ -175,5 +167,3 @@ h1 {
   gap: 20px; /* Espaçamento entre os cards */
   justify-content: center; /* Centraliza os cards na tela */
 }
-
-
