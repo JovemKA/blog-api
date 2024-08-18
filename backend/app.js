@@ -1,9 +1,10 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 require('dotenv').config();
 
 // Middleware para JSON
-app.use(express.json());
+app.use(bodyParser.json());
 
 // Importando as rotas
 const postsRouter = require('./routes/posts');
