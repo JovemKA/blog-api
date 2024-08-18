@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Importando as rotas
-const postsRouter = require('./routes/posts');
+const postsRouter = require('./routes/postsRouter');
 app.use('/posts', postsRouter);
 
 const PORT = process.env.PORT || 3000;
