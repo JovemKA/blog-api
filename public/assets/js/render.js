@@ -1,7 +1,7 @@
 // Função para renderizar os posts na página principal
 async function loadPosts() {
     try {
-        const response = await fetch('http://localhost:3000/posts');
+        const response = await fetch('/posts');
         if (!response.ok) {
             throw new Error('Erro na resposta da API: ' + response.statusText);
         }
