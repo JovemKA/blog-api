@@ -1,0 +1,6 @@
+.post-info {
+    padding-top: 50px;
+    display: column;
+    align-items: start;
+    gap: 10px;
+}

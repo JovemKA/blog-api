@@ -44,8 +44,9 @@ nav a {
   color: #182825;
 }
 
-main {
-  padding: 20px;
+.main {
+  padding-right: 40px;
+  padding-left: 40px;
 }
 
 h1 {
