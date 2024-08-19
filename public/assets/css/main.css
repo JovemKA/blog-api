@@ -7,15 +7,15 @@
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
+  color: #182825;
 }
 
 header {
-  background-color: #f0f0f0;
-  /* Cor de fundo do cabeçalho */
-  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
 }
 
 .logo {
@@ -42,7 +42,7 @@ nav ul {
 nav a {
   text-decoration: none;
   color: #182825;
-}
+} 
 
 .main {
   padding-right: 40px;

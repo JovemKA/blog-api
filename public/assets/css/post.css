@@ -1,4 +1,54 @@
 .post-info {
+    margin: 20px 0;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.post-title {
+    width: 60%;
+    margin-bottom: 48px;
+    font-size: 3.5rem;
+    line-height: 112%;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.filter-button.category {
+    border: 1px solid #182825;
+    border-radius: 15px;
+    padding: 5px 10px;
+    background-color: #ffffff;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.filter-button:hover {
+    background-color: #182825;
+    color: #ffffff;
+  }
+  
+
+.post-container {
+  line-height: 1.6;
+  margin-bottom: 40px;
+  padding: 80px 160px;
+}
+
+.post-container p {
+  margin-bottom: 50px;
+  letter-spacing: .4px;
+}
+
+.post-container h2 {
+    margin-bottom: 32px;
+    font-size: 2.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.post-info {
     padding-top: 50px;
     display: column;
     align-items: start;
