@@ -11,7 +11,12 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Middleware para servir arquivos estáticos
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
+
+// Rota para servir o index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
 // Importando as rotas
 const postsRouter = require('./routes/postsRouter');
