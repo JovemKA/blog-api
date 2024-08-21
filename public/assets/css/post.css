@@ -1,6 +1,11 @@
 .post-info {
-    margin: 20px 0;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
 }
+
 
 .post-date {
     font-size: 0.9rem;
@@ -11,10 +16,11 @@
     width: 60%;
     margin-bottom: 48px;
     font-size: 3.5rem;
-    line-height: 112%;
+    line-height: 1.12; /* Melhor prática para line-height */
     font-weight: bold;
     margin: 10px 0;
 }
+
 
 .filter-button.category {
     border: 1px solid #182825;
@@ -28,29 +34,28 @@
 .filter-button:hover {
     background-color: #182825;
     color: #ffffff;
-  }
-  
-
-.post-container {
-  line-height: 1.6;
-  margin-bottom: 40px;
-  padding: 80px 160px;
 }
 
+
+.post-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 780px;
+    line-height: 1.6;
+    margin: 0 auto 40px auto;
+    padding: 0 24px;
+    font-size: 20px;
+}
+
+
 .post-container p {
-  margin-bottom: 50px;
-  letter-spacing: .4px;
+    margin-bottom: 50px;
+    letter-spacing: .4px;
 }
 
 .post-container h2 {
     margin-bottom: 32px;
     font-size: 2.5rem;
     border-bottom: 1px solid #ddd;
-}
-
-.post-info {
-    padding-top: 50px;
-    display: column;
-    align-items: start;
-    gap: 10px;
+    justify-content: center;
 }
