@@ -1,7 +1,7 @@
 // Função para renderizar os posts na página principal
 async function loadPosts() {
     try {
-        const response = await fetch('http://localhost:3000/posts');
+        const response = await fetch('/posts');
         if (!response.ok) {
             throw new Error('Erro na resposta da API: ' + response.statusText);
         }
@@ -33,7 +33,7 @@ async function loadPosts() {
             link.addEventListener('click', (event) => {
                 event.preventDefault();
                 const slug = event.target.getAttribute('data-slug');
-                window.location.href = `/public/post.html?slug=${slug}`; // Redireciona para a página do post
+                window.location.href = `/post.html?slug=${slug}`; // Redireciona para a página do post
             });
         });
 
@@ -51,7 +51,7 @@ window.addEventListener('DOMContentLoaded', loadPosts);
 async function loadPostContent() {
     try {
         const slug = getQueryParam('slug'); // Obtém o slug da URL
-        const response = await fetch(`http://localhost:3000/posts/${slug}`);
+        const response = await fetch(`/posts/${slug}`);
         if (!response.ok) {
             throw new Error('Erro na resposta da API: ' + response.statusText);
         }
