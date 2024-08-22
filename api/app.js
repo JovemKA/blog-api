@@ -1,28 +1,18 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
-const app = express();
-require('dotenv').config();
-
 const cors = require('cors');
+const postsRoutes = require('./routes/posts');
+const errorHandler = require('./middlewares/errorHandler');
+
+const app = express();
+
 app.use(cors());
+app.use(express.json());
 
-// Middleware para JSON
-app.use(bodyParser.json());
+app.use('/posts', postsRoutes);
 
-// Middleware para servir arquivos estáticos
-app.use(express.static(path.join(__dirname, '../public')));
-
-// Rota para servir o index.html
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
- });
-
-// Importando as rotas
-const postsRouter = require('./routes/postsRouter');
-app.use('/posts', postsRouter);
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
