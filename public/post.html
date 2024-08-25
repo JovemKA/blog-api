@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link rel="icon" href="https://glitch.com/favicon.ico" /> -->
-    <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="stylesheet" href="./assets/css/post.css" />
-    <script src="./assets/js/utils.js" defer></script>
-    <script src="./assets/js/render.js" defer></script>
-    <title></title>
-  </head>
-  <body>
-    <main class="main">
-      <header>
-        <h1 class="logo">Meu Blog</h1>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Post do Blog - Andrey Kaiky</title>
   
-        <nav class="navbar">
-          <ul>
-            <li class="section">Blog</li>
-            <li class="section">Sobre</li>
-            <li class="section">Contato</li>
-          </ul>
-        </nav>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  <link rel="stylesheet" href="./assets/css/post.css" />
   
-        <input type="search" placeholder="Pesquisar" />
-      </header>
-      <div class="breadcrumb"></div>
-      <div class="post-info">
-        <p class="post-date"></p>
-        <h1 class="post-title"></h1>
-        <button class="filter-button category"></button>
-      </div>
-      <article class="post-container">
-      </article>
-    </main>
-  </body>
+  <!-- JavaScript -->
+  <script src="./assets/js/utils.js" type="module" defer></script>
+  <script src="./assets/js/render.js" type="module" defer></script>
+</head>
+<body>
+  <main class="main">
+    <header>
+      <h1 class="logo">Meu Blog</h1>
+      
+      <nav class="navbar">
+        <ul>
+          <li class="section"><a href="index.html">Blog</a></li>
+          <li class="section"><a href="sobre.html">Sobre</a></li>
+          <li class="section"><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+      
+      <input type="search" placeholder="Pesquisar" aria-label="Pesquisar no blog" />
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> &gt; <span id="breadcrumb-post-title">Post</span>
+    </div>
+
+    <!-- Informações do Post -->
+    <div class="post-info">
+      <p class="post-date"></p>
+      <h1 class="post-title"></h1>
+      <button class="filter-button category"></button>
+    </div>
+
+    <!-- Conteúdo do Post -->
+    <article class="post-container"></article>
+  </main>
+</body>
 </html>

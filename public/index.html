@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- <link rel="icon" href="https://glitch.com/favicon.ico" /> -->
-
   <title>Andrey Kaiky - Blog</title>
-
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="./assets/css/main.css" />
-
-  <script src="./assets/js/utils.js"  defer></script>
-  <script src="./assets/js/render.js"  defer></script>
+  
+  <!-- JavaScript -->
+  <script src="./assets/js/render.js" type="module" defer></script>
 </head>
-
 <body>
   <main class="main">
     <header>
       <h1 class="logo">Meu Blog</h1>
-  
+      
       <nav class="navbar">
         <ul>
-          <li class="section">Blog</li>
-          <li class="section">Sobre</li>
-          <li class="section">Contato</li>
+          <li class="section"><a href="index.html">Blog</a></li>
+          <li class="section"><a href="sobre.html">Sobre</a></li>
+          <li class="section"><a href="contato.html">Contato</a></li>
         </ul>
       </nav>
-  
-      <input type="search" placeholder="Pesquisar" />
+      
+      <input type="search" placeholder="Pesquisar" aria-label="Pesquisar no blog" />
     </header>
+
+    <!-- Título do Blog -->
     <h1>Blog de Andrey Kaiky</h1>
+
+    <!-- Botões de Filtro -->
     <div class="filter-buttons">
       <button class="filter-button active">Todos</button>
       <button class="filter-button">Games</button>
       <button class="filter-button">Filmes</button>
       <button class="filter-button">Músicas</button>
     </div>
+
+    <!-- Grid de Posts -->
     <section class="posts-grid"></section>
   </main>
 </body>
-
 </html>
