@@ -1,8 +1,8 @@
 const { body, validationResult } = require('express-validator');
 
 exports.validatePost = [
-    body('title').notEmpty().withMessage('Title is required'),
-    body('content').notEmpty().withMessage('Content is required'),
+    body('title').notEmpty().withMessage('O título é obrigatório'),
+    body('content').notEmpty().withMessage('O conteúdo é obrigatório'),
     (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
