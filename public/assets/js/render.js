@@ -3,7 +3,7 @@
 import { getQueryParam } from './utils.js';
 
 // URL base do backend
-const BASE_URL = 'http://localhost:3000'; // Ajuste conforme necessário
+const BASE_URL = 'https://jovemkablog.vercel.app'; // Ajuste conforme necessário
 
 // Função para renderizar os posts na página principal
 async function loadPosts() {
